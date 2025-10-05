@@ -1,0 +1,147 @@
+{
+  "sites": [
+    {
+      "id": "SITE_001",
+      "name": "Downtown Plaza",
+      "location": "New York, NY",
+      "riskLevel": "High",
+      "riskScore": 8.1,
+      "compliance": 76,
+      "workers": 45,
+      "aiCameras": 12,
+      "lastCheck": "2025-10-04T10:00:00Z",
+      "alerts": {
+        "critical": [
+          {
+            "id": "A101",
+            "type": "NoHelmetDetected",
+            "description": "Worker detected without helmet on scaffolding zone.",
+            "timestamp": "2025-10-04T09:45:12Z",
+            "confidence": 0.96
+          },
+          {
+            "id": "A102",
+            "type": "SlipFallDetected",
+            "description": "Possible fall incident near elevator shaft.",
+            "timestamp": "2025-10-04T09:20:03Z",
+            "confidence": 0.94
+          }
+        ],
+        "warning": [
+          {
+            "id": "A103",
+            "type": "ProximityViolation",
+            "description": "Worker too close to operating crane.",
+            "timestamp": "2025-10-04T09:55:45Z",
+            "confidence": 0.89
+          }
+        ],
+        "info": [
+          {
+            "id": "A104",
+            "type": "LowLightDetected",
+            "description": "Camera detected reduced lighting in north section.",
+            "timestamp": "2025-10-04T08:50:00Z",
+            "confidence": 0.82
+          }
+        ]
+      }
+    },
+    {
+      "id": "SITE_002",
+      "name": "Riverside Complex",
+      "location": "Chicago, IL",
+      "riskLevel": "Moderate",
+      "riskScore": 6.3,
+      "compliance": 92,
+      "workers": 32,
+      "aiCameras": 8,
+      "lastCheck": "2025-10-04T11:00:00Z",
+      "alerts": {
+        "critical": [],
+        "warning": [
+          {
+            "id": "A201",
+            "type": "SafetyVestMissing",
+            "description": "One worker detected without safety vest near site gate.",
+            "timestamp": "2025-10-04T10:40:00Z",
+            "confidence": 0.91
+          }
+        ],
+        "info": [
+          {
+            "id": "A202",
+            "type": "CameraOffline",
+            "description": "One AI camera temporarily disconnected.",
+            "timestamp": "2025-10-04T10:55:00Z",
+            "confidence": 0.78
+          }
+        ]
+      }
+    },
+    {
+      "id": "SITE_003",
+      "name": "Tech Hub Center",
+      "location": "Austin, TX",
+      "riskLevel": "Low",
+      "riskScore": 4.2,
+      "compliance": 96,
+      "workers": 28,
+      "aiCameras": 6,
+      "lastCheck": "2025-10-04T11:30:00Z",
+      "alerts": {
+        "critical": [],
+        "warning": [],
+        "info": [
+          {
+            "id": "A301",
+            "type": "SystemCheck",
+            "description": "Routine AI safety check completed successfully.",
+            "timestamp": "2025-10-04T11:20:00Z",
+            "confidence": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "SITE_004",
+      "name": "Harbor Bridge",
+      "location": "San Francisco, CA",
+      "riskLevel": "Moderate",
+      "riskScore": 7.0,
+      "compliance": 84,
+      "workers": 38,
+      "aiCameras": 10,
+      "lastCheck": "2025-10-04T10:45:00Z",
+      "alerts": {
+        "critical": [
+          {
+            "id": "A401",
+            "type": "UnauthorizedEntry",
+            "description": "Unauthorized individual detected in crane zone.",
+            "timestamp": "2025-10-04T10:30:00Z",
+            "confidence": 0.95
+          }
+        ],
+        "warning": [
+          {
+            "id": "A402",
+            "type": "UnsafeProximity",
+            "description": "Worker detected within 2 meters of heavy machinery.",
+            "timestamp": "2025-10-04T10:40:00Z",
+            "confidence": 0.88
+          }
+        ],
+        "info": [
+          {
+            "id": "A403",
+            "type": "EquipmentCheck",
+            "description": "AI verified all PPE equipment at main gate.",
+            "timestamp": "2025-10-04T10:15:00Z",
+            "confidence": 0.99
+          }
+        ]
+      }
+    }
+  ]
+}

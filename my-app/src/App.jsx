@@ -3,6 +3,7 @@ import Login from './components/Login'
 import MapView from './components/SiteMap'
 import LiveFeed from './components/LiveFeed'
 import Alerts from './components/Alerts'
+// import AutoProcessingStatus from './components/AutoProcessingStatus'
 import './App.css'
 import logo from './assets/logo.jpg'
 
@@ -291,6 +292,9 @@ function App() {
                 </div>
               </div>
 
+              {/* Auto Processing Status */}
+              {/* <AutoProcessingStatus /> */}
+
               {/* Sites Grid Overview */}
               <div className="sites-grid">
                 {sites.map(site => (
@@ -485,29 +489,18 @@ function App() {
                       <span className="ppe-percentage">88%</span>
                     </div>
                     <div className="ppe-progress">
-                      <div className="ppe-bar" style={{width: '88%'}}></div>
+                      <div className="ppe-bar moderate" style={{width: '88%'}}></div>
                     </div>
                   </div>
                   
                   <div className="ppe-item">
-                    <div className="ppe-icon">🧤</div>
+                    <div className="ppe-icon">😷</div>
                     <div className="ppe-info">
-                      <span className="ppe-name">Work Gloves</span>
+                      <span className="ppe-name">Safety Mask</span>
                       <span className="ppe-percentage">74%</span>
                     </div>
                     <div className="ppe-progress">
                       <div className="ppe-bar warning" style={{width: '74%'}}></div>
-                    </div>
-                  </div>
-                  
-                  <div className="ppe-item">
-                    <div className="ppe-icon">🥾</div>
-                    <div className="ppe-info">
-                      <span className="ppe-name">Safety Boots</span>
-                      <span className="ppe-percentage">95%</span>
-                    </div>
-                    <div className="ppe-progress">
-                      <div className="ppe-bar" style={{width: '95%'}}></div>
                     </div>
                   </div>
                 </div>
@@ -517,8 +510,9 @@ function App() {
               <MapView />
             </div>
           )}
-            </>
-          )}
+        </>
+        )}
+          
         </div>
       </main>
 
@@ -540,4 +534,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

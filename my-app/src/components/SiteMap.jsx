@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./SiteMap.css";
 
 export default function MapView() {
@@ -40,7 +40,7 @@ export default function MapView() {
     // Construction site data
     const constructionSites = [
       {
-        id: 1,
+        id: "SITE_001",
         name: "Downtown Plaza Construction",
         location: "New York, NY",
         coordinates: [-74.006, 40.7128],
@@ -50,7 +50,7 @@ export default function MapView() {
         activeAlerts: 2
       },
       {
-        id: 2,
+        id: "SITE_002",
         name: "Riverside Complex",
         location: "Chicago, IL",
         coordinates: [-87.6298, 41.8781],
@@ -60,7 +60,7 @@ export default function MapView() {
         activeAlerts: 0
       },
       {
-        id: 3,
+        id: "SITE_003",
         name: "Tech Hub Center",
         location: "Austin, TX",
         coordinates: [-97.7431, 30.2672],
@@ -70,7 +70,7 @@ export default function MapView() {
         activeAlerts: 3
       },
       {
-        id: 4,
+        id: "SITE_004",
         name: "Harbor Bridge Project",
         location: "San Francisco, CA",
         coordinates: [-122.4194, 37.7749],
@@ -150,7 +150,27 @@ export default function MapView() {
 
       // Add click event
       markerElement.addEventListener('click', () => {
-        alert(`Site: ${site.name}\nLocation: ${site.location}\nStatus: ${site.status}\nRisk Score: ${site.riskScore}/10\nCompliance: ${site.compliance}%`);
+        // Create popup content with site information
+        const popupHTML = `
+          <div style="padding: 10px; min-width: 200px;">
+            <h3 style="margin: 0 0 10px 0; color: #333;">${site.name}</h3>
+            <p style="margin: 5px 0; color: #666;"><strong>Location:</strong> ${site.location}</p>
+            <p style="margin: 5px 0; color: #666;"><strong>Status:</strong> ${site.status}</p>
+            <p style="margin: 5px 0; color: #666;"><strong>Risk Score:</strong> ${site.riskScore}/10</p>
+            <p style="margin: 5px 0; color: #666;"><strong>Compliance:</strong> ${site.compliance}%</p>
+            <div style="margin-top: 10px; padding: 8px; background: #f0f9ff; border-radius: 6px; border-left: 4px solid #0369a1;">
+              <small style="color: #0369a1; font-weight: 600;">
+                🤖 Auto-Processing: Videos dropped in folder are analyzed automatically
+              </small>
+            </div>
+          </div>
+        `;
+
+        const popup = new window.maplibregl.Popup({ closeOnClick: false })
+          .setLngLat(site.coordinates)
+          .setHTML(popupHTML)
+          .addTo(map);
+
         map.flyTo({
           center: site.coordinates,
           zoom: 10,
