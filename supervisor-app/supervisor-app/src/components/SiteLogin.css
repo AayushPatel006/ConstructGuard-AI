@@ -1,0 +1,223 @@
+/* Mobile-first design for site login */
+.site-login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.site-login-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.site-login-header h1 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.site-login-header p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.site-login-form {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.site-login-form h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.sites-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .sites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.site-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 3px solid transparent;
+}
+
+.site-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.site-card.selected {
+  border-color: #28a745;
+  background: #f8f9fa;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.site-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.risk-badge {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.location {
+  color: #6c757d;
+  margin: 0 0 15px 0;
+  font-size: 0.9rem;
+}
+
+.site-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  text-transform: uppercase;
+}
+
+.alert-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.alert-count {
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.alert-count.critical {
+  background: #dc354520;
+  color: #dc3545;
+}
+
+.alert-count.warning {
+  background: #fd7e1420;
+  color: #fd7e14;
+}
+
+.alert-count.info {
+  background: #17a2b820;
+  color: #17a2b8;
+}
+
+.alert-count.safe {
+  background: #28a74520;
+  color: #28a745;
+}
+
+.login-button {
+  width: 100%;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #218838;
+}
+
+.login-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.app-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.app-info p {
+  color: white;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Loading states */
+.site-card.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Touch-friendly adjustments for mobile */
+@media (max-width: 767px) {
+  .site-login-container {
+    padding: 15px;
+  }
+  
+  .site-card {
+    padding: 15px;
+  }
+  
+  .site-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .login-button {
+    padding: 18px;
+    font-size: 1.2rem;
+  }
+}
